@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>NimeoTrust • Escrow + Trust Layer | Stop Online Scams</title>
+  <!-- Google Fonts + Tailwind + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #f4f7fc; }
+    .trust-glow { box-shadow: 0 8px 20px rgba(0, 100, 80, 0.08); transition: all 0.2s ease; }
+    .step-dot-active { background-color: #059669; box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.2); }
+    .step-dot-completed { background-color: #10b981; }
+    .btn-primary { background: linear-gradient(105deg, #0f3b2c 0%, #1e6f5c 100%); transition: all 0.2s; }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0, 80, 70, 0.2); }
+    .badge-verif { background: #eef9f5; color: #0b5e42; }
+    .dispute-badge { background: #fee2e2; color: #b91c1c; }
+    .card-hover:hover { transform: translateY(-2px); transition: all 0.2s ease; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-8">
+      <div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-shield-hart text-3xl text-emerald-700"></i>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-800 to-teal-700 bg-clip-text text-transparent">NimeoTrust</h1>
+          <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full ml-2">escrow+trust</span>
+        </div>
+        <p class="text-gray-600 mt-1 max-w-xl">Stop getting scammed • Smart escrow + deep trust layer for Jiji, IG, WhatsApp & beyond</p>
+      </div>
+      <div class="flex gap-2 text-sm bg-white/70 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+        <i class="fas fa-check-circle text-emerald-600"></i>
+        <span class="font-medium">#NeverNimeoshwa</span>
+      </div>
+    </div>
+
+    <!-- Two-column main area -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- LEFT COLUMN : Seller Profile + Trust deep + Verification -->
+      <div class="lg:col-span-5 space-y-6">
+        <!-- Seller Card (verified + behavior + trust deeper) -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden trust-glow border border-gray-100">
+          <div class="bg-gradient-to-r from-emerald-900 to-teal-800 px-6 py-4">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-3 text-white">
+                <i class="fas fa-store text-2xl"></i>
+                <span class="font-bold text-lg">Verified Seller</span>
+              </div>
+              <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm"><i class="fas fa-id-card mr-1"></i> Identity secured</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 flex-wrap">
+              <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-3xl font-bold text-emerald-800">JT</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h2 class="text-2xl font-bold text-gray-800">Jane Wanjiku</h2>
+                  <div class="flex gap-1">
+                    <i class="fas fa-check-circle text-blue-500 text-sm"></i>
+                    <i class="fas fa-check-double text-emerald-600 text-sm"></i>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 mt-1">
+                  <div class="flex items-center gap-1"><i class="fas fa-star text-yellow-500 text-sm"></i><span class="font-semibold">4.92</span><span class="text-gray-500 text-xs">(342 ratings)</span></div>
+                  <div class="text-gray-400 text-sm">•</div>
+                  <div class="flex gap-2">
+                    <span class="badge-verif text-xs px-2 py-1 rounded-full"><i class="fas fa-id-card mr-1"></i>ID Verified</span>
+                    <span class="badge-verif text-xs px-2 py-1 rounded-full"><i class="fas fa-phone-alt mr-1"></i>Phone verified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- behavior score / deeper trust metrics -->
+            <div class="mt-5 grid grid-cols-2 gap-3 border-t pt-4 border-gray-100">
+              <div class="bg-gray-50 rounded-xl p-3 text-center">
+                <p class="text-xs text-gray-500 uppercase font-semibold">Behavior Score</p>
+                <p class="text-2xl font-black text-emerald-700">98<span class="text-sm font-normal text-gray-500">/100</span></p>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1"><div class="bg-emerald-600 h-1.5 rounded-full w-[98%]"></div></div>
+                <p class="text-[11px] text-gray-500 mt-1">Excellent history</p>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-3 text-center">
+                <p class="text-xs text-gray-500 uppercase font-semibold">On-time delivery</p>
+                <p class="text-2xl font-black text-emerald-700">99%</p>
+                <i class="fas fa-truck-fast text-emerald-600 mt-1 inline-block"></i>
+              </div>
+            </div>
+            
+            <!-- deeper trust breakdown (like Uber rating but deeper) -->
+            <div class="mt-4 bg-emerald-50/40 rounded-xl p-4">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-gray-700 text-sm"><i class="fas fa-chart-line text-emerald-600 mr-1"></i> Deep Trust Index</h4>
+                <span class="text-xs bg-white px-2 py-0.5 rounded-full shadow-sm">live score</span>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between"><span>⚡ Dispute-free rate</span><span class="font-semibold">99.2%</span><div class="w-20 bg-gray-200 rounded-full"><div class="bg-emerald-600 w-[99%] h-1.5 rounded-full"></div></div></div>
+                <div class="flex justify-between"><span>📦 Shipping accuracy</span><span class="font-semibold">98.7%</span><div class="w-20 bg-gray-200 rounded-full"><div class="bg-emerald-600 w-[98%] h-1.5 rounded-full"></div></div></div>
+                <div class="flex justify-between"><span>💬 Chat response (min)</span><span class="font-semibold"> &lt;2hrs</span><div class="w-20 bg-gray-200 rounded-full"><div class="bg-emerald-600 w-[94%] h-1.5 rounded-full"></div></div></div>
+                <div class="flex justify-between"><span>🏆 Completed escrow deals</span><span class="font-semibold">187</span><i class="fas fa-hand-holding-usd text-emerald-600 ml-1"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product card + Jiji/IG mention -->
+        <div class="bg-white rounded-2xl shadow-md p-5 border-l-4 border-emerald-500">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-mobile-alt text-3xl text-gray-600"></i>
+            <div>
+              <h3 class="font-bold text-gray-800 text-lg">iPhone 13 • 128GB</h3>
+              <p class="text-gray-500 text-sm">Midnight, 93% battery health, like new</p>
+            </div>
+            <div class="ml-auto text-right">
+              <div class="text-2xl font-black text-emerald-800">₦65,000</div>
+              <div class="text-xs text-gray-400">or KES 65,000</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded"><i class="fab fa-whatsapp text-green-600"></i> WhatsApp Deal</span>
+            <span class="bg-gray-100 px-2 py-1 rounded"><i class="fas fa-store"></i> Jiji listing</span>
+            <span class="bg-gray-100 px-2 py-1 rounded"><i class="fab fa-instagram"></i> IG shop</span>
+          </div>
+          <p class="text-xs text-gray-500 mt-3 flex items-center gap-1"><i class="fas fa-shield-alt text-emerald-600"></i> <span>Escrow protected • funds safe until delivery confirmation</span></p>
+        </div>
+
+        <!-- extra stats: trust philosophy -->
+        <div class="bg-white rounded-xl p-4 shadow-sm flex gap-3 items-center">
+          <i class="fas fa-hand-peace fa-2x text-emerald-600"></i>
+          <div><p class="font-semibold">Why this wins</p><p class="text-xs text-gray-500">“Fear of scams disappears when money is held in trust + seller verification + dispute layer”</p></div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: ESCROW SIMULATION + TRUST LAYER IN ACTION -->
+      <div class="lg:col-span-7">
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+          <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2">
+            <h2 class="font-bold text-xl text-gray-800"><i class="fas fa-lock mr-2 text-emerald-600"></i> Escrow transaction flow</h2>
+            <span class="text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">🔒 Delivery confirmation system active</span>
+          </div>
+
+          <!-- dynamic transaction state panel -->
+          <div class="p-6">
+            <div class="bg-gray-50 rounded-xl p-4 mb-6 flex justify-between items-center">
+              <div>
+                <p class="text-xs uppercase tracking-wide text-gray-500">Escrow balance (held by NimeoTrust)</p>
+                <p class="text-3xl font-black text-emerald-800" id="escrowBalanceDisplay">₦0</p>
+                <p class="text-xs text-gray-400 mt-1">funds released only after delivery confirmation</p>
+              </div>
+              <div class="h-12 w-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                <i class="fas fa-hand-holding-usd text-emerald-700 text-xl"></i>
+              </div>
+            </div>
+
+            <!-- step progress indicator (visual) -->
+            <div class="mb-8">
+              <div class="flex justify-between items-center text-xs font-medium text-gray-500 mb-2">
+                <span>1. Fund escrow</span><span>2. Seller ships</span><span>3. Confirm delivery</span><span>4. ✅ Released</span>
+              </div>
+              <div class="flex w-full gap-1">
+                <div class="h-2 rounded-l-full flex-1" id="step1Bar"></div>
+                <div class="h-2 flex-1" id="step2Bar"></div>
+                <div class="h-2 flex-1" id="step3Bar"></div>
+                <div class="h-2 rounded-r-full flex-1" id="step4Bar"></div>
+              </div>
+            </div>
+
+            <!-- Status / Message panel -->
+            <div id="statusMessage" class="mb-5 p-3 rounded-lg bg-blue-50 border border-blue-100 text-blue-800 text-sm flex items-center gap-2">
+              <i class="fas fa-info-circle"></i> <span id="statusText">Awaiting escrow funding. Start transaction to secure your payment.</span>
+            </div>
+
+            <!-- dispute alert (dynamic) -->
+            <div id="disputeAlert" class="hidden mb-5 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm flex items-center justify-between gap-2">
+              <div><i class="fas fa-gavel mr-2"></i> <span id="disputeMsg">⚠️ Dispute raised — escrow frozen, resolution team notified.</span></div>
+              <button id="resolveDisputeMock" class="text-xs bg-white border border-red-300 px-2 py-1 rounded-md hover:bg-red-50">Mock resolve (admin clear)</button>
+            </div>
+
+            <!-- Action buttons grid (core escrow controls) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+              <button id="fundEscrowBtn" class="btn-primary text-white font-semibold py-2.5 rounded-xl shadow-md flex items-center justify-center gap-2 transition"><i class="fas fa-coins"></i> Fund escrow</button>
+              <button id="sellerShipBtn" class="bg-amber-100 text-amber-800 font-semibold py-2.5 rounded-xl border border-amber-300 hover:bg-amber-200 transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"><i class="fas fa-truck"></i> Seller ships</button>
+              <button id="confirmDeliveryBtn" class="bg-emerald-100 text-emerald-800 font-semibold py-2.5 rounded-xl border border-emerald-300 hover:bg-emerald-200 transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"><i class="fas fa-check-double"></i> Confirm delivery</button>
+              <button id="raiseDisputeBtn" class="bg-red-100 text-red-700 font-semibold py-2.5 rounded-xl border border-red-200 hover:bg-red-200 transition disabled:opacity-40 flex items-center justify-center gap-2"><i class="fas fa-exclamation-triangle"></i> Raise dispute</button>
+            </div>
+            <div class="flex justify-center">
+              <button id="resetDemoBtn" class="text-gray-500 text-sm bg-gray-100 px-5 py-2 rounded-full hover:bg-gray-200 transition"><i class="fas fa-undo-alt mr-1"></i> Reset demo transaction</button>
+            </div>
+
+            <!-- More info about delivery confirmation system -->
+            <div class="mt-8 text-xs border-t pt-5 text-gray-500 flex flex-wrap justify-between gap-2">
+              <div><i class="fas fa-id-check text-emerald-600 mr-1"></i> <strong>Seller verification active</strong> (ID+Phone+Behavior score)</div>
+              <div><i class="fas fa-hand-peace mr-1 text-emerald-600"></i> <strong>Trust score:</strong> 4.92 • 342 transactions</div>
+              <div><i class="fas fa-balance-scale mr-1"></i> Dispute handling: 48h resolution guarantee</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Score deep-dive card (extra layer) -->
+        <div class="mt-6 bg-white rounded-xl p-4 shadow-sm flex flex-wrap justify-between items-center gap-3 border border-gray-200">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center"><i class="fas fa-chart-simple text-emerald-700"></i></div>
+            <div><p class="font-semibold text-gray-800">Trust deeper than Uber rating</p><p class="text-xs text-gray-500">ID verification + on-chain behavior + historical escrow performance</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div><span class="text-xl font-black text-emerald-700">98</span><span class="text-gray-500">/100</span><p class="text-[11px]">Behavior score</p></div>
+            <div><span class="text-xl font-black text-emerald-700">0.3%</span><p class="text-[11px]">Dispute ratio</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-12 text-center text-xs text-gray-400 border-t pt-6 flex justify-between flex-wrap">
+      <span>© 2025 NimeoTrust — Escrow layer built to end online scams on Jiji, WhatsApp, Instagram.</span>
+      <span><i class="fas fa-shield-heart"></i> 100% buyer protection • seller accountability</span>
+    </footer>
+  </div>
+
+  <script>
+    // Transaction State Management (demo)
+    let state = {
+      escrowFunded: false,     // money held
+      sellerShipped: false,
+      deliveryConfirmed: false,
+      disputed: false,
+      paymentReleased: false,
+      amountKES: 65000         // product price from card (KES)
+    };
+
+    // DOM elements
+    const escrowBalanceSpan = document.getElementById('escrowBalanceDisplay');
+    const statusTextSpan = document.getElementById('statusText');
+    const disputeAlertDiv = document.getElementById('disputeAlert');
+    const disputeMsgSpan = document.getElementById('disputeMsg');
+    
+    // buttons
+    const fundBtn = document.getElementById('fundEscrowBtn');
+    const shipBtn = document.getElementById('sellerShipBtn');
+    const confirmBtn = document.getElementById('confirmDeliveryBtn');
+    const disputeBtn = document.getElementById('raiseDisputeBtn');
+    const resetBtn = document.getElementById('resetDemoBtn');
+    const resolveDisputeMockBtn = document.getElementById('resolveDisputeMock');
+    
+    // progress bars
+    const step1Bar = document.getElementById('step1Bar');
+    const step2Bar = document.getElementById('step2Bar');
+    const step3Bar = document.getElementById('step3Bar');
+    const step4Bar = document.getElementById('step4Bar');
+
+    function updateUI() {
+      // update escrow display: if payment released then balance 0, else if escrowFunded true show amount else 0
+      let displayAmount = 0;
+      if (state.paymentReleased) displayAmount = 0;
+      else if (state.escrowFunded && !state.paymentReleased) displayAmount = state.amountKES;
+      else displayAmount = 0;
+      escrowBalanceSpan.innerText = `₦${displayAmount.toLocaleString()}`;
+      
+      // Update status message based on state, dispute priority
+      let statusMsg = '';
+      if (state.disputed) {
+        statusMsg = '⚠️ DISPUTE ACTIVE — Escrow frozen. Our team is reviewing case. Funds are safe.';
+        statusTextSpan.innerText = statusMsg;
+      } 
+      else if (state.paymentReleased) {
+        statusMsg = '✅ Payment released to seller! Delivery confirmed. Transaction completed safely.';
+        statusTextSpan.innerText = statusMsg;
+      }
+      else if (state.deliveryConfirmed && !state.paymentReleased) {
+        // just in case, but deliveryConfirmed should trigger release directly (auto in logic)
+        statusMsg = '📦 Delivery confirmed! Releasing funds to seller...';
+        statusTextSpan.innerText = statusMsg;
+      }
+      else if (state.sellerShipped && state.escrowFunded && !state.deliveryConfirmed && !state.paymentReleased) {
+        statusMsg = '🚚 Seller has shipped item. Please confirm delivery after receiving product. Funds remain in escrow.';
+        statusTextSpan.innerText = statusMsg;
+      }
+      else if (state.escrowFunded && !state.sellerShipped && !state.disputed) {
+        statusMsg = '💰 Escrow funded! Seller will now ship the item. Delivery confirmation releases payment.';
+        statusTextSpan.innerText = statusMsg;
+      }
+      else if (!state.escrowFunded && !state.disputed) {
+        statusMsg = '🔒 Start transaction: Send money to escrow. Your payment is 100% protected.';
+        statusTextSpan.innerText = statusMsg;
+      } else {
+        statusMsg = 'Transaction pending next step.';
+        statusTextSpan.innerText = statusMsg;
+      }
+      
+      // dispute alert visibility
+      if (state.disputed) {
+        disputeAlertDiv.classList.remove('hidden');
+        disputeMsgSpan.innerText = `🚨 Dispute opened — transaction ID #NTX-${Math.floor(Math.random()*9000)+1000}. Escrow locked until resolution. Both parties notified.`;
+      } else {
+        disputeAlertDiv.classList.add('hidden');
+      }
+      
+      // Button states (enable/disable based on logic)
+      // Fund button: only if not escrowFunded, payment not released, and not disputed
+      fundBtn.disabled = (state.escrowFunded || state.paymentReleased || state.disputed);
+      // Seller ship: available only if escrowFunded && !sellerShipped && !deliveryConfirmed && !paymentReleased && !state.disputed
+      shipBtn.disabled = (!state.escrowFunded || state.sellerShipped || state.deliveryConfirmed || state.paymentReleased || state.disputed);
+      // confirm delivery: only if sellerShipped && !deliveryConfirmed && !paymentReleased && escrowFunded && !disputed
+      confirmBtn.disabled = (!state.sellerShipped || state.deliveryConfirmed || state.paymentReleased || !state.escrowFunded || state.disputed);
+      // raise dispute: disabled if paymentReleased or already disputed 
+      disputeBtn.disabled = (state.paymentReleased || state.disputed);
+      
+      // Update progress bars (visual)
+      let stepsCompleted = 0;
+      if (state.paymentReleased) stepsCompleted = 4;
+      else if (state.deliveryConfirmed) stepsCompleted = 3;
+      else if (state.sellerShipped) stepsCompleted = 2;
+      else if (state.escrowFunded) stepsCompleted = 1;
+      else stepsCompleted = 0;
+      
+      const colors = { active: '#10b981', inactive: '#e5e7eb' };
+      step1Bar.style.backgroundColor = stepsCompleted >= 1 ? colors.active : '#e5e7eb';
+      step2Bar.style.backgroundColor = stepsCompleted >= 2 ? colors.active : '#e5e7eb';
+      step3Bar.style.backgroundColor = stepsCompleted >= 3 ? colors.active : '#e5e7eb';
+      step4Bar.style.backgroundColor = stepsCompleted >= 4 ? colors.active : '#e5e7eb';
+      
+      // style text on status if necessary
+      if (state.disputed) {
+        document.getElementById('statusMessage').classList.remove('bg-blue-50', 'border-blue-100');
+        document.getElementById('statusMessage').classList.add('bg-red-50', 'border-red-200', 'text-red-700');
+      } else {
+        document.getElementById('statusMessage').classList.remove('bg-red-50', 'border-red-200', 'text-red-700');
+        document.getElementById('statusMessage').classList.add('bg-blue-50', 'border-blue-100', 'text-blue-800');
+      }
+    }
+    
+    // Helper to show toast-like alert (non-intrusive)
+    function showFloatingMessage(msg, isError = false) {
+      const toast = document.createElement('div');
+      toast.className = `fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 px-5 py-3 rounded-full shadow-lg text-sm font-medium transition-all duration-300 ${isError ? 'bg-red-600 text-white' : 'bg-gray-900 text-white'} flex items-center gap-2`;
+      toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i> ${msg}`;
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.remove(); }, 2800);
+    }
+    
+    // fund escrow action (buyer sends money to platform)
+    function fundEscrow() {
+      if (state.disputed) { showFloatingMessage("Cannot fund during active dispute", true); return; }
+      if (state.escrowFunded) { showFloatingMessage("Escrow already funded", true); return; }
+      if (state.paymentReleased) { showFloatingMessage("Transaction already completed", true); return; }
+      state.escrowFunded = true;
+      state.sellerShipped = false;
+      state.deliveryConfirmed = false;
+      state.paymentReleased = false;
+      updateUI();
+      showFloatingMessage(`✅ ₦${state.amountKES.toLocaleString()} locked in escrow. Seller notified.`, false);
+    }
+    
+    // seller ships item (seller action)
+    function sellerShip() {
+      if (state.disputed) { showFloatingMessage("Dispute active — shipping cannot be updated", true); return; }
+      if (!state.escrowFunded) { showFloatingMessage("Escrow not funded yet! Buyer must fund first.", true); return; }
+      if (state.sellerShipped) { showFloatingMessage("Item already marked as shipped", true); return; }
+      if (state.paymentReleased) { showFloatingMessage("Payment already released", true); return; }
+      state.sellerShipped = true;
+      updateUI();
+      showFloatingMessage("🚚 Seller marked item as shipped. Buyer will confirm delivery.", false);
+    }
+    
+    // delivery confirmation system (buyer confirms and funds released to seller)
+    function confirmDelivery() {
+      if (state.disputed) { showFloatingMessage("Dispute ongoing — delivery confirmation locked", true); return; }
+      if (!state.escrowFunded) { showFloatingMessage("No escrow funds", true); return; }
+      if (!state.sellerShipped) { showFloatingMessage("Seller hasn't shipped item yet. Wait for shipping confirmation.", true); return; }
+      if (state.deliveryConfirmed || state.paymentReleased) { showFloatingMessage("Delivery already confirmed or payment released", true); return; }
+      
+      // simulate delivery confirmation process: release payment to seller
+      state.deliveryConfirmed = true;
+      state.paymentReleased = true;
+      // funds released from escrow to seller
+      updateUI();
+      showFloatingMessage("✅ Delivery confirmed! Funds released to seller. Transaction complete. Thank you for using secure escrow.", false);
+    }
+    
+    function raiseDispute() {
+      if (state.paymentReleased) { showFloatingMessage("Payment already released — dispute cannot be opened", true); return; }
+      if (state.disputed) { showFloatingMessage("Dispute already active", true); return; }
+      state.disputed = true;
+      // in dispute mode, no other actions except reset. funds locked.
+      updateUI();
+      showFloatingMessage("⚠️ Dispute registered! Escrow frozen. Our trust & safety team will review within 24h.", false);
+    }
+    
+    // mock admin resolve dispute (for demo: resolve dispute, reset to before escrow but keep fresh)
+    function resolveDispute() {
+      if (!state.disputed) {
+        showFloatingMessage("No active dispute to resolve", true);
+        return;
+      }
+      // resolving dispute: we'll reset transaction but keep product amount, reset all flags to initial
+      // also show dispute resolved and cleared
+      state.disputed = false;
+      state.escrowFunded = false;
+      state.sellerShipped = false;
+      state.deliveryConfirmed = false;
+      state.paymentReleased = false;
+      updateUI();
+      showFloatingMessage("⚖️ Admin resolved dispute. All funds returned to buyer. Transaction reset. You can start fresh.", false);
+    }
+    
+    function resetTransaction() {
+      // Hard reset all states
+      state.escrowFunded = false;
+      state.sellerShipped = false;
+      state.deliveryConfirmed = false;
+      state.disputed = false;
+      state.paymentReleased = false;
+      updateUI();
+      showFloatingMessage("🔄 Transaction reset. Escrow cleared. You can start a new secure deal.", false);
+    }
+    
+    // event listeners
+    fundBtn.addEventListener('click', fundEscrow);
+    shipBtn.addEventListener('click', sellerShip);
+    confirmBtn.addEventListener('click', confirmDelivery);
+    disputeBtn.addEventListener('click', raiseDispute);
+    resetBtn.addEventListener('click', resetTransaction);
+    if (resolveDisputeMockBtn) resolveDisputeMockBtn.addEventListener('click', resolveDispute);
+    
+    // additional twitch: if sellerShipped but transaction reload ensure safety
+    // and adding deep trust reminder
+    updateUI();
+    
+    // Also note the delivery confirmation system + behavior score reflection - all integrated.
+    // seller verification feature already in left panel (ID, phone, behavior score)
+    // dispute handling fully integrated with alert and actions.
+    // Trust score deeper metrics visible: ratings, delivery accuracy, chat response, behavior score, etc.
+    // Show trust layer escrow anytime.
+  </script>
+</body>
+</html>
